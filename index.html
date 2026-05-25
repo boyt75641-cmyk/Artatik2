@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ticket Checkout</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f6f8;
+    color:#111827;
+}
+
+.container{
+    max-width:480px;
+    margin:auto;
+    background:white;
+    min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+    padding:25px 22px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-box{
+    width:42px;
+    height:42px;
+    background:#3046d3;
+    border-radius:10px;
+}
+
+.logo h1{
+    color:#3046d3;
+    font-size:34px;
+    font-weight:700;
+}
+
+.lang{
+    background:#f1f2f7;
+    padding:12px 18px;
+    border-radius:30px;
+    font-weight:500;
+}
+
+/* STEP */
+
+.steps{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.step{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:2px solid #d5d7df;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    color:#6b7280;
+}
+
+.step.active{
+    background:#3d5afe;
+    color:white;
+    border:none;
+}
+
+.step.current{
+    border:2px solid #3d5afe;
+    color:#3d5afe;
+}
+
+.arrow{
+    font-size:24px;
+    font-weight:600;
+}
+
+/* EVENT */
+
+.event-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+
+.event-info{
+    color:#6b7280;
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+/* FORM */
+
+.form-section{
+    padding:0 22px 30px;
+}
+
+.form-group{
+    margin-bottom:24px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.required{
+    color:red;
+}
+
+.input,
+.select{
+    width:100%;
+    height:58px;
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+    padding:0 18px;
+    font-size:16px;
+    outline:none;
+    transition:0.2s;
+}
+
+.input:focus,
+.select:focus{
+    border-color:#3d5afe;
+}
+
+/* PHONE */
+
+.phone-wrapper{
+    display:flex;
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+    overflow:hidden;
+    height:58px;
+}
+
+.flag{
+    width:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-right:2px solid #e5e7eb;
+    background:white;
+    font-size:18px;
+    font-weight:500;
+}
+
+.phone-input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:0 16px;
+    font-size:18px;
+}
+
+/* SUMMARY */
+
+.summary{
+    margin-top:40px;
+    border-top:1px solid #eee;
+    padding-top:25px;
+}
+
+.summary h2{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.ticket-card{
+    background:#fafafa;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.ticket-title{
+    font-size:22px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.ticket-qty{
+    color:#6b7280;
+}
+
+.line{
+    height:1px;
+    background:#e5e7eb;
+    margin:22px 0;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:14px;
+    font-size:18px;
+}
+
+.total{
+    font-weight:700;
+    font-size:22px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    padding:35px 20px;
+}
+
+.contact-logo{
+    color:#3046d3;
+    font-size:40px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.whatsapp{
+    font-size:22px;
+}
+
+/* TIMER */
+
+.timer{
+    background:#f9bf00;
+    padding:18px;
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+    position:sticky;
+    bottom:95px;
+    z-index:99;
+}
+
+/* FOOTER */
+
+.footer{
+    position:sticky;
+    bottom:0;
+    background:white;
+    padding:18px;
+    border-top:1px solid #e5e7eb;
+}
+
+.footer-top{
+    font-size:18px;
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+.footer-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.back-btn{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+    border:2px solid #e5e7eb;
+    background:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.next-btn{
+    flex:1;
+    height:60px;
+    border:none;
+    border-radius:14px;
+    background:#3d5afe;
+    color:white;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.next-btn:hover{
+    opacity:0.95;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:999;
+}
+
+.modal-content{
+    background:white;
+    width:100%;
+    max-width:420px;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    animation:fadeIn .3s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        transform:scale(.9);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-content h2{
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.qris-img{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+.upload-box{
+    border:2px dashed #cfd4dc;
+    padding:25px;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+.upload-box input{
+    width:100%;
+}
+
+.submit-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:14px;
+    background:#3d5afe;
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.close-btn{
+    margin-top:12px;
+    color:#6b7280;
+    cursor:pointer;
+    font-size:15px;
+}
+
+/* SUCCESS */
+
+.success-icon{
+    font-size:80px;
+    margin-bottom:15px;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .logo h1{
+        font-size:30px;
+    }
+
+    .event-title{
+        font-size:24px;
+    }
+
+    .timer{
+        font-size:22px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="topbar">
+
+            <div class="logo">
+                <div class="logo-box"></div>
+                <h1>Artatix</h1>
+            </div>
+
+            <div class="lang">
+                🇮🇩 ID
+            </div>
+
+        </div>
+
+        <!-- STEP -->
+
+        <div class="steps">
+
+            <div class="step active">1</div>
+            <div class="arrow">›</div>
+
+            <div class="step current">2</div>
+
+            <div style="font-size:18px;font-weight:500;">
+                Detail Pesanan
+            </div>
+
+            <div class="arrow">›</div>
+
+            <div class="step">3</div>
+
+            <div class="arrow">›</div>
+
+            <div class="step">4</div>
+
+        </div>
+
+        <!-- EVENT -->
+
+        <h2 class="event-title">
+            NEVERLAND BANDUNG
+        </h2>
+
+        <div class="event-info">
+            16 Agustus 2026 • 14:00 - 23:00
+        </div>
+
+        <div class="event-info">
+            BANDUNG, Kota Bandung, Jawa Barat
+        </div>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div class="form-section">
+
+        <div class="form-group">
+            <label>Nama Lengkap <span class="required">*</span></label>
+            <input type="text" class="input" placeholder="Masukkan nama lengkap Anda">
+        </div>
+
+        <div class="form-group">
+            <label>Tipe Identitas <span class="required">*</span></label>
+
+            <select class="select">
+                <option>Pilih tipe identitas Anda</option>
+                <option>KTP</option>
+                <option>SIM</option>
+                <option>Passport</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Nomor Identitas <span class="required">*</span></label>
+            <input type="text" class="input" placeholder="Masukkan nomor identitas Anda">
+        </div>
+
+        <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" class="input" placeholder="Masukkan email Anda">
+        </div>
+
+        <div class="form-group">
+
+            <label>No. WhatsApp <span class="required">*</span></label>
+
+            <div class="phone-wrapper">
+
+                <div class="flag">
+                    🇮🇩 +62
+                </div>
+
+                <input type="text" class="phone-input" placeholder="8123456789">
+
+            </div>
+
+        </div>
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+            <h2>🛍️ Rincian Pesanan</h2>
+
+            <div class="ticket-card">
+
+                <div class="ticket-title">
+                    PRESALE - FESTIVAL
+                </div>
+
+                <div class="ticket-qty">
+                    x1
+                </div>
+
+                <div class="line"></div>
+
+                <div class="row">
+                    <span>Subtotal</span>
+                    <span>Rp150.000</span>
+                </div>
+
+                <div class="row total">
+                    <span>Total Bayar</span>
+                    <span>Rp150.000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="contact">
+
+        <div class="contact-logo">
+            Artatix
+        </div>
+
+        <div class="whatsapp">
+            📞 +62 821-3767-6220
+        </div>
+
+    </div>
+
+    <!-- TIMER -->
+
+    <div class="timer">
+        <span id="countdown">03:00</span> | Batas Waktu Tersisa
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <div class="footer-top">
+            Total Bayar
+        </div>
+
+        <div class="footer-buttons">
+
+            <button class="back-btn">
+                ‹
+            </button>
+
+            <button class="next-btn" onclick="openPayment()">
+                Lanjutkan
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL PAYMENT -->
+
+<div class="modal" id="paymentModal">
+
+    <div class="modal-content">
+
+        <h2>Pembayaran QRIS</h2>
+
+        <!-- GANTI qris.png DENGAN QRIS KAMU -->
+        <img src="qris.png" class="qris-img" alt="QRIS">
+
+        <div class="upload-box">
+
+            <p style="margin-bottom:15px;font-weight:600;">
+                Upload Bukti Pembayaran
+            </p>
+
+            <input type="file" id="paymentProof">
+
+        </div>
+
+        <button class="submit-btn" onclick="submitPayment()">
+            Beli Tiket
+        </button>
+
+        <div class="close-btn" onclick="closePayment()">
+            Tutup
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL SUCCESS -->
+
+<div class="modal" id="successModal">
+
+    <div class="modal-content">
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h2>
+            Pembayaran Berhasil
+        </h2>
+
+        <p style="
+            color:#6b7280;
+            margin-top:15px;
+            margin-bottom:25px;
+            line-height:1.7;
+        ">
+            Tiket berhasil dibeli.
+            <br>
+            E-ticket akan dikirim ke email Anda.
+        </p>
+
+        <button class="submit-btn" onclick="finishOrder()">
+            Selesai
+        </button>
+
+    </div>
+
+</div>
+
+<!-- SCRIPT -->
+
+<script>
+
+/* TIMER */
+
+let time = 3 * 60;
+
+const countdown = document.getElementById("countdown");
+
+const timer = setInterval(() => {
+
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    countdown.innerHTML = `${minutes}:${seconds}`;
+
+    time--;
+
+    if (time < 0) {
+
+        clearInterval(timer);
+
+        countdown.innerHTML = "00:00";
+
+        alert("Waktu pembayaran telah habis!");
+
+    }
+
+}, 1000);
+
+/* OPEN PAYMENT */
+
+function openPayment(){
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+/* CLOSE PAYMENT */
+
+function closePayment(){
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+/* SUBMIT PAYMENT */
+
+function submitPayment(){
+
+    const file = document.getElementById("paymentProof").files[0];
+
+    if(!file){
+        alert("Silakan upload bukti pembayaran!");
+        return;
+    }
+
+    // tutup modal pembayaran
+    document.getElementById("paymentModal").style.display = "none";
+
+    // tampilkan modal sukses
+    document.getElementById("successModal").style.display = "flex";
+}
+
+/* FINISH */
+
+function finishOrder(){
+
+    alert("Terima kasih telah membeli tiket!");
+
+    // redirect optional
+    // window.location.href = "success.html";
+
+}
+
+</script>
+
+</body>
+</html>
