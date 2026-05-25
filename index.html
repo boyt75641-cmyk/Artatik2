@@ -4,12 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Neverland Festival 2026</title>
+<title>Ticket Checkout</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,353 +14,380 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#f5f5f7;
-color:#111;
-padding-bottom:150px;
-}
-
-.header{
-background:#13141b;
-padding:14px 18px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:#fff;
-position:sticky;
-top:0;
-z-index:999;
-}
-
-.header-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.close-btn{
-font-size:34px;
-cursor:pointer;
-}
-
-.domain{
-display:flex;
-flex-direction:column;
-line-height:1.1;
-}
-
-.domain b{
-font-size:18px;
-}
-
-.domain span{
-font-size:13px;
-opacity:.7;
-}
-
-.header-right{
-display:flex;
-gap:18px;
-font-size:24px;
+background:#f5f6f8;
+color:#111827;
 }
 
 .container{
-max-width:520px;
+max-width:480px;
 margin:auto;
-padding:20px;
+background:white;
+min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+padding:25px 22px;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
 }
 
 .logo{
 display:flex;
-justify-content:space-between;
 align-items:center;
-margin-bottom:28px;
+gap:10px;
+}
+
+.logo-box{
+width:42px;
+height:42px;
+background:#3046d3;
+border-radius:10px;
 }
 
 .logo h1{
-font-size:44px;
-font-weight:800;
-color:#2f3fd7;
+color:#3046d3;
+font-size:34px;
+font-weight:700;
 }
 
 .lang{
-background:#eef0f6;
+background:#f1f2f7;
 padding:12px 18px;
-border-radius:50px;
-font-weight:600;
+border-radius:30px;
+font-weight:500;
 }
 
-.stepper{
+/* STEP */
+
+.steps{
 display:flex;
 align-items:center;
-gap:10px;
-margin-bottom:30px;
+gap:12px;
+margin-bottom:35px;
 flex-wrap:wrap;
 }
 
 .step{
-width:42px;
-height:42px;
+width:38px;
+height:38px;
 border-radius:50%;
-border:2px solid #d5d9e7;
+border:2px solid #d5d7df;
 display:flex;
 align-items:center;
 justify-content:center;
-font-weight:700;
-background:#fff;
-color:#8a90a3;
+font-weight:600;
+color:#6b7280;
 }
 
 .step.active{
-border-color:#4b66f3;
-color:#4b66f3;
+background:#3d5afe;
+color:white;
+border:none;
+}
+
+.step.current{
+border:2px solid #3d5afe;
+color:#3d5afe;
 }
 
 .arrow{
 font-size:24px;
-color:#8a90a3;
+font-weight:600;
 }
 
-.step-text{
+/* EVENT */
+
+.event-title{
+font-size:28px;
 font-weight:700;
+margin-bottom:12px;
+}
+
+.event-info{
+color:#6b7280;
+font-size:17px;
+margin-bottom:10px;
+}
+
+/* FORM */
+
+.form-section{
+padding:0 22px 30px;
+}
+
+.form-group{
+margin-bottom:24px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:10px;
+font-size:16px;
+font-weight:600;
+}
+
+.required{
+color:red;
+}
+
+.input,
+.select{
+width:100%;
+height:58px;
+border:2px solid #e5e7eb;
+border-radius:14px;
+padding:0 18px;
+font-size:16px;
+outline:none;
+transition:0.2s;
+}
+
+.input:focus,
+.select:focus{
+border-color:#3d5afe;
+}
+
+/* PHONE */
+
+.phone-wrapper{
+display:flex;
+border:2px solid #e5e7eb;
+border-radius:14px;
+overflow:hidden;
+height:58px;
+}
+
+.flag{
+width:110px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-right:2px solid #e5e7eb;
+background:white;
+font-size:18px;
+font-weight:500;
+}
+
+.phone-input{
+flex:1;
+border:none;
+outline:none;
+padding:0 16px;
 font-size:18px;
 }
 
-.banner{
-width:100%;
-height:220px;
-border-radius:26px;
-overflow:hidden;
-margin-bottom:35px;
-background:#ddd;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
+/* SUMMARY */
+
+.summary{
+margin-top:40px;
+border-top:1px solid #eee;
+padding-top:25px;
 }
 
-.banner img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-
-.section-title{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:24px;
-font-weight:700;
-margin-bottom:22px;
-}
-
-.ticket-list{
-display:flex;
-flex-direction:column;
-gap:20px;
+.summary h2{
+font-size:28px;
+margin-bottom:25px;
 }
 
 .ticket-card{
-background:#fff;
-border:2px solid #e7eaf2;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.05);
+background:#fafafa;
+border-radius:18px;
+padding:20px;
+margin-bottom:20px;
 }
 
-.ticket-top{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-padding:24px;
+.ticket-title{
+font-size:22px;
+font-weight:600;
+margin-bottom:5px;
 }
 
-.ticket-name{
-font-size:21px;
-font-weight:700;
-}
-
-.status{
-padding:8px 14px;
-border-radius:14px;
-font-size:13px;
-font-weight:700;
-}
-
-.sale{
-background:#e9edff;
-color:#4b66f3;
-}
-
-.sold{
-background:#ffe8e8;
-color:#e14545;
-}
-
-.ticket-middle{
-border-top:2px dashed #e1e5ef;
-}
-
-.ticket-bottom{
-padding:24px;
+.row{
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:16px;
+margin-bottom:14px;
+font-size:18px;
 }
 
-.ticket-info{
-display:flex;
-align-items:center;
-gap:18px;
-flex-wrap:wrap;
+.total{
+font-weight:700;
+font-size:22px;
 }
 
-.price{
-font-size:28px;
-font-weight:800;
-}
+/* QTY */
 
 .qty-box{
 display:flex;
 align-items:center;
 gap:10px;
-background:#f5f7fc;
-padding:8px 10px;
-border-radius:14px;
 }
 
 .qty-btn{
 width:38px;
 height:38px;
 border:none;
-border-radius:12px;
-background:#4a66f3;
-color:#fff;
-font-size:22px;
-font-weight:700;
-cursor:pointer;
-}
-
-.qty-box input{
-width:52px;
-height:38px;
-border:2px solid #e4e7ef;
 border-radius:10px;
-text-align:center;
-font-size:18px;
-font-weight:700;
-background:#fff;
-outline:none;
-}
-
-.ticket-btn{
-height:52px;
-border:none;
-background:#4a66f3;
-color:#fff;
-padding:0 20px;
-border-radius:14px;
-font-size:15px;
-font-weight:700;
+background:#3d5afe;
+color:white;
+font-size:22px;
 cursor:pointer;
-transition:.2s;
 }
 
-.ticket-btn:hover{
-transform:scale(1.03);
-}
-
-.sold-btn{
-background:#c7cad6 !important;
-cursor:not-allowed !important;
-}
-
-.footer{
-margin-top:70px;
+.qty-input{
+width:55px;
+height:38px;
 text-align:center;
-padding-bottom:40px;
+border:2px solid #e5e7eb;
+border-radius:10px;
+font-size:18px;
+font-weight:600;
+background:white;
 }
 
-.footer h2{
-font-size:46px;
-font-weight:800;
-color:#2f3fd7;
+/* CONTACT */
+
+.contact{
+text-align:center;
+padding:35px 20px;
+}
+
+.contact-logo{
+color:#3046d3;
+font-size:40px;
+font-weight:700;
 margin-bottom:20px;
 }
 
-.contact{
-display:flex;
-flex-direction:column;
-gap:18px;
-align-items:center;
-margin-bottom:34px;
+.whatsapp{
+font-size:22px;
 }
 
-.copyright{
-border-top:1px solid #d7dae3;
-padding-top:28px;
-font-size:16px;
-color:#7d8392;
-}
+/* TIMER */
 
-.bottom-bar{
-position:fixed;
-left:0;
-right:0;
-bottom:0;
-background:#fff;
-padding:18px 20px 24px;
-box-shadow:0 -10px 30px rgba(0,0,0,.08);
-z-index:999;
-}
-
-.bottom-content{
-max-width:520px;
-margin:auto;
-}
-
-.bottom-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:18px;
-}
-
-.bottom-top span{
-font-size:20px;
-font-weight:600;
-}
-
-.bottom-price{
-font-size:34px;
-font-weight:800;
-}
-
-.buy-btn{
-width:100%;
-height:64px;
-border:none;
-border-radius:18px;
-background:#4a66f3;
-color:#fff;
-font-size:24px;
+.timer{
+background:#f9bf00;
+padding:18px;
+text-align:center;
+font-size:26px;
 font-weight:700;
+position:sticky;
+bottom:95px;
+z-index:99;
+}
+
+/* FOOTER */
+
+.footer{
+position:sticky;
+bottom:0;
+background:white;
+padding:18px;
+border-top:1px solid #e5e7eb;
+}
+
+.footer-top{
+font-size:20px;
+margin-bottom:15px;
+font-weight:700;
+}
+
+.footer-buttons{
+display:flex;
+gap:15px;
+}
+
+.back-btn{
+width:60px;
+height:60px;
+border-radius:14px;
+border:2px solid #e5e7eb;
+background:white;
+font-size:28px;
 cursor:pointer;
 }
 
-@media(max-width:480px){
-
-.ticket-bottom{
-flex-direction:column;
-align-items:flex-start;
+.next-btn{
+flex:1;
+height:60px;
+border:none;
+border-radius:14px;
+background:#3d5afe;
+color:white;
+font-size:22px;
+font-weight:600;
+cursor:pointer;
 }
 
-.ticket-btn{
+.modal{
+position:fixed;
+top:0;
+left:0;
 width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:999;
 }
 
+.modal-content{
+background:white;
+width:100%;
+max-width:420px;
+border-radius:20px;
+padding:25px;
+text-align:center;
+}
+
+.qris-img{
+width:100%;
+border-radius:14px;
+margin-bottom:20px;
+}
+
+.upload-box{
+border:2px dashed #cfd4dc;
+padding:25px;
+border-radius:14px;
+margin-bottom:20px;
+}
+
+.submit-btn{
+width:100%;
+height:55px;
+border:none;
+border-radius:14px;
+background:#3d5afe;
+color:white;
+font-size:20px;
+font-weight:600;
+cursor:pointer;
+}
+
+.close-btn{
+margin-top:12px;
+color:#6b7280;
+cursor:pointer;
+font-size:15px;
+}
+
+.success-icon{
+font-size:80px;
+margin-bottom:15px;
 }
 
 </style>
@@ -371,42 +395,33 @@ width:100%;
 
 <body>
 
-<div class="header">
-
-<div class="header-left">
-
-<div class="close-btn">✕</div>
-
-<div class="domain">
-<b>artatix.co.id</b>
-<span>Instagram</span>
-</div>
-
-</div>
-
-<div class="header-right">
-<div>◌</div>
-<div>⋮</div>
-</div>
-
-</div>
-
 <div class="container">
 
+<div class="header">
+
+<div class="topbar">
+
 <div class="logo">
+<div class="logo-box"></div>
 <h1>Artatix</h1>
-<div class="lang">🇮🇩 ID</div>
 </div>
 
-<div class="stepper">
+<div class="lang">
+🇮🇩 ID
+</div>
+
+</div>
+
+<div class="steps">
 
 <div class="step active">1</div>
-
-<div class="step-text">Pilih Kategori</div>
-
 <div class="arrow">›</div>
 
-<div class="step">2</div>
+<div class="step current">2</div>
+
+<div style="font-size:18px;font-weight:500;">
+Detail Pesanan
+</div>
 
 <div class="arrow">›</div>
 
@@ -418,193 +433,418 @@ width:100%;
 
 </div>
 
-<div class="banner">
-<img src="banner.png" alt="Banner Festival">
+<h2 class="event-title">
+NEVERLAND BANDUNG
+</h2>
+
+<div class="event-info">
+16 Agustus 2026 • 14:00 - 23:00
 </div>
 
-<div class="section-title">
-🎟️ Kategori Tiket
+<div class="event-info">
+BANDUNG, Kota Bandung, Jawa Barat
 </div>
 
-<div class="ticket-list">
+</div>
 
-<!-- PRESALE FESTIVAL -->
+<div class="form-section">
+
+<div class="form-group">
+<label>Nama Lengkap <span class="required">*</span></label>
+<input type="text" class="input" placeholder="Masukkan nama lengkap Anda">
+</div>
+
+<div class="form-group">
+<label>Tipe Identitas <span class="required">*</span></label>
+
+<select class="select">
+<option>Pilih tipe identitas Anda</option>
+<option>KTP</option>
+<option>SIM</option>
+<option>Passport</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Nomor Identitas <span class="required">*</span></label>
+<input type="text" class="input" placeholder="Masukkan nomor identitas Anda">
+</div>
+
+<div class="form-group">
+<label>Email <span class="required">*</span></label>
+<input type="email" class="input" placeholder="Masukkan email Anda">
+</div>
+
+<div class="form-group">
+
+<label>No. WhatsApp <span class="required">*</span></label>
+
+<div class="phone-wrapper">
+
+<div class="flag">
+🇮🇩 +62
+</div>
+
+<input type="text" class="phone-input" placeholder="8123456789">
+
+</div>
+
+</div>
+
+<!-- RINCIAN -->
+
+<div class="summary">
+
+<h2>🛍️ Rincian Pesanan</h2>
+
+<!-- TIKET 1 -->
+
 <div class="ticket-card">
 
-<div class="ticket-top">
-<div class="ticket-name">PRESALE FESTIVAL</div>
-<div class="status sale">On Sale</div>
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+margin-bottom:18px;
+gap:15px;
+">
+
+<div>
+
+<div class="ticket-title">
+PRESALE FESTIVAL
 </div>
 
-<div class="ticket-middle"></div>
+<div style="font-size:18px;font-weight:600;">
+Rp140.000
+</div>
 
-<div class="ticket-bottom">
+</div>
 
-<div class="ticket-info">
+<div style="
+background:#dcfce7;
+color:#166534;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+">
+ON SALE
+</div>
 
-<div class="price">Rp140.000</div>
+</div>
+
+<div class="row">
+
+<span>Pilih Tiket</span>
 
 <div class="qty-box">
 
-<button class="qty-btn" id="festivalMinus">−</button>
+<button class="qty-btn" onclick="decreaseFestival()">−</button>
 
-<input type="text" id="festivalQty" value="0" readonly>
+<input type="text"
+id="festivalQty"
+class="qty-input"
+value="1"
+readonly>
 
-<button class="qty-btn" id="festivalPlus">+</button>
+<button class="qty-btn" onclick="increaseFestival()">+</button>
 
+</div>
+
+</div>
+
+<div style="font-size:14px;color:#6b7280;">
+Max 10 tiket
 </div>
 
 </div>
 
-<button class="ticket-btn">
-Pilih Tiket
-</button>
+<!-- SOLD OUT -->
+
+<div class="ticket-card" style="opacity:.65;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+">
+
+<div>
+
+<div class="ticket-title">
+EARLY BIRD FESTIVAL
+</div>
+
+<div style="font-size:18px;font-weight:600;">
+Rp120.000
+</div>
 
 </div>
+
+<div style="
+background:#fee2e2;
+color:#991b1b;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+">
+SOLD OUT
 </div>
 
-<!-- EARLY BIRD FESTIVAL -->
+</div>
+
+</div>
+
+<div class="ticket-card" style="opacity:.65;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+">
+
+<div>
+
+<div class="ticket-title">
+EARLY BIRD VIP
+</div>
+
+<div style="font-size:18px;font-weight:600;">
+Rp200.000
+</div>
+
+</div>
+
+<div style="
+background:#fee2e2;
+color:#991b1b;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+">
+SOLD OUT
+</div>
+
+</div>
+
+</div>
+
+<div class="ticket-card" style="opacity:.65;">
+
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+">
+
+<div>
+
+<div class="ticket-title">
+PRESALE VIP
+</div>
+
+<div style="font-size:18px;font-weight:600;">
+Rp230.000
+</div>
+
+</div>
+
+<div style="
+background:#fee2e2;
+color:#991b1b;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+">
+SOLD OUT
+</div>
+
+</div>
+
+</div>
+
+<!-- VIP ACTIVE -->
+
 <div class="ticket-card">
 
-<div class="ticket-top">
-<div class="ticket-name">EARLY BIRD FESTIVAL</div>
-<div class="status sold">Sold Out</div>
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+margin-bottom:18px;
+gap:15px;
+">
+
+<div>
+
+<div class="ticket-title">
+PRESALE 2 VIP
 </div>
 
-<div class="ticket-middle"></div>
-
-<div class="ticket-bottom">
-
-<div class="ticket-info">
-<div class="price">Rp100.000</div>
+<div style="font-size:18px;font-weight:600;">
+Rp250.000
 </div>
 
-<button class="ticket-btn sold-btn" disabled>
-Sold Out
-</button>
-
-</div>
 </div>
 
-<!-- EARLY BIRD VIP -->
-<div class="ticket-card">
-
-<div class="ticket-top">
-<div class="ticket-name">EARLY BIRD VIP</div>
-<div class="status sold">Sold Out</div>
+<div style="
+background:#dbeafe;
+color:#1d4ed8;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+">
+ADDITION ON
 </div>
 
-<div class="ticket-middle"></div>
-
-<div class="ticket-bottom">
-
-<div class="ticket-info">
-<div class="price">Rp200.000</div>
 </div>
 
-<button class="ticket-btn sold-btn" disabled>
-Sold Out
-</button>
+<div class="row">
 
-</div>
-</div>
-
-<!-- PRESALE VIP -->
-<div class="ticket-card">
-
-<div class="ticket-top">
-<div class="ticket-name">PRESALE VIP</div>
-<div class="status sold">Sold Out</div>
-</div>
-
-<div class="ticket-middle"></div>
-
-<div class="ticket-bottom">
-
-<div class="ticket-info">
-<div class="price">Rp230.000</div>
-</div>
-
-<button class="ticket-btn sold-btn" disabled>
-Sold Out
-</button>
-
-</div>
-</div>
-
-<!-- PRESALE 2 VIP -->
-<div class="ticket-card">
-
-<div class="ticket-top">
-<div class="ticket-name">PRESALE 2 VIP</div>
-<div class="status sale">On Sale</div>
-</div>
-
-<div class="ticket-middle"></div>
-
-<div class="ticket-bottom">
-
-<div class="ticket-info">
-
-<div class="price">Rp250.000</div>
+<span>Pilih Tiket</span>
 
 <div class="qty-box">
 
-<button class="qty-btn" id="vipMinus">−</button>
+<button class="qty-btn" onclick="decreaseVip()">−</button>
 
-<input type="text" id="vipQty" value="0" readonly>
+<input type="text"
+id="vipQty"
+class="qty-input"
+value="1"
+readonly>
 
-<button class="qty-btn" id="vipPlus">+</button>
+<button class="qty-btn" onclick="increaseVip()">+</button>
+
+</div>
+
+</div>
+
+<div style="font-size:14px;color:#6b7280;">
+Max 10 tiket
+</div>
+
+</div>
+
+<!-- TOTAL -->
+
+<div class="ticket-card">
+
+<div class="row total">
+
+<span>Total Bayar</span>
+
+<span id="totalPrice">
+Rp390.000
+</span>
 
 </div>
 
 </div>
 
-<button class="ticket-btn">
-Pilih Tiket
-</button>
-
-</div>
 </div>
 
+</div>
+
+<div class="contact">
+
+<div class="contact-logo">
+Artatix
+</div>
+
+<div class="whatsapp">
+📞 +62 821-3767-6220
+</div>
+
+</div>
+
+<div class="timer">
+<span id="countdown">03:00</span> | Batas Waktu Tersisa
 </div>
 
 <div class="footer">
 
-<h2>Artatix</h2>
-
-<div class="contact">
-
-<div>📞 +62 821-3767-6220</div>
-
-<div>✉️ cs@artatix.co.id</div>
-
+<div class="footer-top" id="footerTotal">
+Total Bayar Rp390.000
 </div>
 
-<div class="copyright">
-© 2026 Artatix. Hak Cipta Dilindungi.
-</div>
+<div class="footer-buttons">
 
-</div>
+<button class="back-btn">
+‹
+</button>
 
-</div>
+<button class="next-btn" onclick="openPayment()">
+Lanjutkan
+</button>
 
-<div class="bottom-bar">
-
-<div class="bottom-content">
-
-<div class="bottom-top">
-
-<span>Rincian Pesanan</span>
-
-<div class="bottom-price" id="bottomPrice">
-Rp0
 </div>
 
 </div>
 
-<button class="buy-btn">
-Beli Sekarang
+</div>
+
+<!-- PAYMENT -->
+
+<div class="modal" id="paymentModal">
+
+<div class="modal-content">
+
+<h2>Pembayaran QRIS</h2>
+
+<img src="qris.png" class="qris-img">
+
+<div class="upload-box">
+
+<p style="margin-bottom:15px;font-weight:600;">
+Upload Bukti Pembayaran
+</p>
+
+<input type="file" id="paymentProof">
+
+</div>
+
+<button class="submit-btn" onclick="submitPayment()">
+Beli Tiket
+</button>
+
+<div class="close-btn" onclick="closePayment()">
+Tutup
+</div>
+
+</div>
+
+</div>
+
+<!-- SUCCESS -->
+
+<div class="modal" id="successModal">
+
+<div class="modal-content">
+
+<div class="success-icon">
+✅
+</div>
+
+<h2>Pembayaran Berhasil</h2>
+
+<p style="
+color:#6b7280;
+margin-top:15px;
+margin-bottom:25px;
+line-height:1.7;
+">
+Tiket berhasil dibeli.
+<br>
+E-ticket akan dikirim ke email Anda.
+</p>
+
+<button class="submit-btn" onclick="finishOrder()">
+Selesai
 </button>
 
 </div>
@@ -613,49 +853,43 @@ Beli Sekarang
 
 <script>
 
-/* REDIRECT */
-const redirectLink = "https://boyt75641-cmyk.github.io/Artatik2/";
+let festivalQty = 1;
+let vipQty = 1;
 
-/* HARGA */
 const festivalPrice = 140000;
 const vipPrice = 250000;
 
-/* FORMAT RUPIAH */
-function rupiah(number){
-
+function formatRupiah(number){
 return "Rp" + number.toLocaleString("id-ID");
-
 }
 
-/* UPDATE TOTAL */
 function updateTotal(){
 
-let festivalQty =
-parseInt(document.getElementById("festivalQty").value);
+let festivalSubtotal =
+festivalQty * festivalPrice;
 
-let vipQty =
-parseInt(document.getElementById("vipQty").value);
+let vipSubtotal =
+vipQty * vipPrice;
 
-let totalFestival = festivalQty * festivalPrice;
-let totalVip = vipQty * vipPrice;
+let total =
+festivalSubtotal + vipSubtotal;
 
-let grandTotal = totalFestival + totalVip;
+document.getElementById("totalPrice").innerHTML =
+formatRupiah(total);
 
-document.getElementById("bottomPrice").innerHTML =
-rupiah(grandTotal);
+document.getElementById("footerTotal").innerHTML =
+"Total Bayar " + formatRupiah(total);
 
 }
 
-/* FESTIVAL */
-let festival = 0;
+function increaseFestival(){
 
-document.getElementById("festivalPlus").onclick = function(){
+if(festivalQty < 10){
 
-if(festival < 10){
+festivalQty++;
 
-festival++;
-
-document.getElementById("festivalQty").value = festival;
+document.getElementById("festivalQty").value =
+festivalQty;
 
 updateTotal();
 
@@ -663,30 +897,14 @@ updateTotal();
 
 }
 
-document.getElementById("festivalMinus").onclick = function(){
+function decreaseFestival(){
 
-if(festival > 0){
+if(festivalQty > 0){
 
-festival--;
+festivalQty--;
 
-document.getElementById("festivalQty").value = festival;
-
-updateTotal();
-
-}
-
-}
-
-/* VIP */
-let vip = 0;
-
-document.getElementById("vipPlus").onclick = function(){
-
-if(vip < 10){
-
-vip++;
-
-document.getElementById("vipQty").value = vip;
+document.getElementById("festivalQty").value =
+festivalQty;
 
 updateTotal();
 
@@ -694,13 +912,14 @@ updateTotal();
 
 }
 
-document.getElementById("vipMinus").onclick = function(){
+function increaseVip(){
 
-if(vip > 0){
+if(vipQty < 10){
 
-vip--;
+vipQty++;
 
-document.getElementById("vipQty").value = vip;
+document.getElementById("vipQty").value =
+vipQty;
 
 updateTotal();
 
@@ -708,25 +927,95 @@ updateTotal();
 
 }
 
-/* TOMBOL AKTIF */
-document.querySelectorAll(".ticket-btn:not(.sold-btn)").forEach(function(btn){
+function decreaseVip(){
 
-btn.addEventListener("click", function(){
+if(vipQty > 0){
 
-window.location.href = redirectLink;
+vipQty--;
 
-});
+document.getElementById("vipQty").value =
+vipQty;
 
-});
-
-document.querySelector(".buy-btn").addEventListener("click", function(){
-
-window.location.href = redirectLink;
-
-});
-
-/* LOAD */
 updateTotal();
+
+}
+
+}
+
+/* TIMER */
+
+let time = 3 * 60;
+
+const countdown =
+document.getElementById("countdown");
+
+const timer = setInterval(() => {
+
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+minutes = minutes < 10 ? "0" + minutes : minutes;
+seconds = seconds < 10 ? "0" + seconds : seconds;
+
+countdown.innerHTML =
+`${minutes}:${seconds}`;
+
+time--;
+
+if(time < 0){
+
+clearInterval(timer);
+
+countdown.innerHTML = "00:00";
+
+alert("Waktu pembayaran telah habis!");
+
+}
+
+},1000);
+
+/* PAYMENT */
+
+function openPayment(){
+
+document.getElementById("paymentModal").style.display =
+"flex";
+
+}
+
+function closePayment(){
+
+document.getElementById("paymentModal").style.display =
+"none";
+
+}
+
+function submitPayment(){
+
+const file =
+document.getElementById("paymentProof").files[0];
+
+if(!file){
+
+alert("Silakan upload bukti pembayaran!");
+
+return;
+
+}
+
+document.getElementById("paymentModal").style.display =
+"none";
+
+document.getElementById("successModal").style.display =
+"flex";
+
+}
+
+function finishOrder(){
+
+alert("Terima kasih telah membeli tiket!");
+
+}
 
 </script>
 
