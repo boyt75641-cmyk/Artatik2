@@ -29,8 +29,6 @@ background:white;
 min-height:100vh;
 }
 
-/* HEADER */
-
 .header{
 padding:25px 22px;
 }
@@ -68,8 +66,6 @@ border-radius:30px;
 font-weight:500;
 }
 
-/* STEP */
-
 .steps{
 display:flex;
 align-items:center;
@@ -106,8 +102,6 @@ font-size:24px;
 font-weight:600;
 }
 
-/* EVENT */
-
 .event-title{
 font-size:28px;
 font-weight:700;
@@ -119,8 +113,6 @@ color:#6b7280;
 font-size:17px;
 margin-bottom:10px;
 }
-
-/* FORM */
 
 .form-section{
 padding:0 22px 30px;
@@ -150,15 +142,12 @@ border-radius:14px;
 padding:0 18px;
 font-size:16px;
 outline:none;
-transition:0.2s;
 }
 
 .input:focus,
 .select:focus{
 border-color:#3d5afe;
 }
-
-/* PHONE */
 
 .phone-wrapper{
 display:flex;
@@ -186,8 +175,6 @@ outline:none;
 padding:0 16px;
 font-size:18px;
 }
-
-/* SUMMARY */
 
 .summary{
 margin-top:40px;
@@ -226,8 +213,6 @@ font-weight:700;
 font-size:22px;
 }
 
-/* QTY */
-
 .qty-box{
 display:flex;
 align-items:center;
@@ -256,8 +241,6 @@ font-weight:600;
 background:white;
 }
 
-/* CONTACT */
-
 .contact{
 text-align:center;
 padding:35px 20px;
@@ -274,8 +257,6 @@ margin-bottom:20px;
 font-size:22px;
 }
 
-/* TIMER */
-
 .timer{
 background:#f9bf00;
 padding:18px;
@@ -286,8 +267,6 @@ position:sticky;
 bottom:95px;
 z-index:99;
 }
-
-/* FOOTER */
 
 .footer{
 position:sticky;
@@ -491,13 +470,11 @@ BANDUNG, Kota Bandung, Jawa Barat
 
 </div>
 
-<!-- RINCIAN -->
-
 <div class="summary">
 
 <h2>🛍️ Rincian Pesanan</h2>
 
-<!-- TIKET 1 -->
+<!-- PRESALE FESTIVAL -->
 
 <div class="ticket-card">
 
@@ -577,7 +554,7 @@ EARLY BIRD FESTIVAL
 </div>
 
 <div style="font-size:18px;font-weight:600;">
-Rp120.000
+Rp100.000
 </div>
 
 </div>
@@ -612,7 +589,7 @@ EARLY BIRD VIP
 </div>
 
 <div style="font-size:18px;font-weight:600;">
-Rp200.000
+Rp150.000
 </div>
 
 </div>
@@ -647,7 +624,7 @@ PRESALE VIP
 </div>
 
 <div style="font-size:18px;font-weight:600;">
-Rp230.000
+Rp200.000
 </div>
 
 </div>
@@ -667,7 +644,7 @@ SOLD OUT
 
 </div>
 
-<!-- VIP ACTIVE -->
+<!-- PRESALE 2 VIP -->
 
 <div class="ticket-card">
 
@@ -788,7 +765,7 @@ Lanjutkan
 
 </div>
 
-<!-- PAYMENT -->
+<!-- PAYMENT MODAL -->
 
 <div class="modal" id="paymentModal">
 
@@ -796,7 +773,7 @@ Lanjutkan
 
 <h2>Pembayaran QRIS</h2>
 
-<img src="qris.png" class="qris-img">
+<img src="qris.png" class="qris-img" alt="QRIS">
 
 <div class="upload-box">
 
@@ -820,7 +797,7 @@ Tutup
 
 </div>
 
-<!-- SUCCESS -->
+<!-- SUCCESS MODAL -->
 
 <div class="modal" id="successModal">
 
@@ -830,7 +807,9 @@ Tutup
 ✅
 </div>
 
-<h2>Pembayaran Berhasil</h2>
+<h2>
+Pembayaran Berhasil
+</h2>
 
 <p style="
 color:#6b7280;
@@ -942,8 +921,6 @@ updateTotal();
 
 }
 
-/* TIMER */
-
 let time = 3 * 60;
 
 const countdown =
@@ -973,8 +950,6 @@ alert("Waktu pembayaran telah habis!");
 }
 
 },1000);
-
-/* PAYMENT */
 
 function openPayment(){
 
